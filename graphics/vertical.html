@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<script src="pic.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
+<head>
+	<style text="text/CSS">
+		@font-face {
+			src: url('fonts/pcsenior.ttf');
+			font-family: "pc";
+		}
+		
+		body {
+			width: 795px;
+			height: 195px;
+			background: transparent;
+			padding: 0px;
+			margin: 0px;
+			font-family: "pc";
+			color: white;
+			overflow: hidden;
+		}
+		#windIMG{
+			position: absolute;
+			top: 26px;
+			left: 63px;
+			opacity: 0;
+		}
+		#waterIMG{
+			position: absolute;
+			top: 226px;
+			left: 63px;
+			opacity: 0;
+		}
+		#fireIMG{
+			position: absolute;
+			top: 426px;
+			left: 63px;
+			opacity: 0;
+		}
+		#earthIMG{
+			position: absolute;
+			top: 626px;
+			left: 63px;
+			opacity: 0;
+		}
+		#windJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 135px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+		
+		#waterJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 335px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+		
+		#fireJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 535px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+		#earthJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 735px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="img/Vertical.png"></img>
+	<img id="windIMG" width="68" height="100">
+	<span id="windJob"></span>
+	<img id="waterIMG" width="68" height="100">
+	<span id="waterJob"></span>
+	<img id="fireIMG" width="68" height="100">
+	<span id="fireJob"></span>
+	<img id="earthIMG" width="68" height="100">
+	<span id="earthJob"></span>
+</body>
+
+<script>
+	const windJobReplicant = nodecg.Replicant('windJob');
+	const waterJobReplicant = nodecg.Replicant('waterJob');
+	const fireJobReplicant = nodecg.Replicant('fireJob');
+	const earthJobReplicant = nodecg.Replicant('earthJob');
+	
+	var wind = $('#windJob');
+	var water = $('#waterJob');
+	var fire = $('#fireJob');
+	var earth = $('#earthJob');
+	
+	windJobReplicant.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		$('#windJob').css('opacity', 0);
+		windJob.innerText = `${newValue}`;
+		});
+	
+	waterJobReplicant.on('change', (newValue, oldValue) => {
+		$('#waterJob').css('opacity', 0);
+		waterJob.innerText = `${newValue}`;
+		});
+
+	fireJobReplicant.on('change', (newValue, oldValue) => {
+		$('#fireJob').css('opacity', 0);
+		fireJob.innerText = `${newValue}`;
+		});
+		
+	earthJobReplicant.on('change', (newValue, oldValue) => {
+		$('#earthJob').css('opacity', 0);
+		earthJob.innerText = `${newValue}`;
+		
+		});
+</script>
+
+</html>

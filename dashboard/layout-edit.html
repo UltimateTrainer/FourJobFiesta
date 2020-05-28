@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {
+		background-color: #2F3A4F;
+	}
+	label{
+		font-family: "Helvetica Neue";
+		font-weight: bold;
+		color:white;
+		margin: 5px;
+	}
+	#submitButton{
+	padding: 5px 10px;
+	border-radius: 12px;
+	font-family: "Helvetica Neue";
+	background-color: #2F3A4F;
+	color: white;
+	font-weight: bold;
+	}
+	
+	</style>
+</head>
+<body>
+	<label>Wind Job:</label>
+	<select id="windJob">
+		<option value=""> </option>
+		<optgroup label="Wind Crystal">
+			<option value="knight">Knight</option>
+			<option value="monk">Monk</option>
+			<option value="thief">Thief</option>
+			<option value="black mage">Black Mage</option>
+			<option value="white mage">White Mage</option>
+		</optgroup>
+		<optgroup label="Water Crystal">
+			<option value="berserker">Berserker</option>
+			<option value="mystic knight">Mystic Knight</option>
+			<option value="time mage">Time Mage</option>
+			<option value="summoner">Summoner</option>
+			<option value="red mage">Red Mage</option>
+			<option value="mimic">Mimic</option>
+		</optgroup>
+		<optgroup label="Fire Crystal">
+			<option value="trainer">Trainer</option>
+			<option value="geomancer">Geomancer</option>
+			<option value="ninja">Ninja</option>
+			<option value="bard">Bard</option>
+			<option value="hunter">Hunter</option>
+		</optgroup>
+		<optgroup label="Earth Crystal">
+			<option value="samurai">Samurai</option>
+			<option value="lancer">Lancer</option>
+			<option value="dancer">Dancer</option>
+			<option value="chemist">Chemist</option>
+		</optgroup>
+	</select>
+	<br>
+	<label>Water Job:</label>
+	<select id="waterJob">
+		<option value=""> </option>
+		<optgroup label="Wind Crystal">
+			<option value="knight">Knight</option>
+			<option value="monk">Monk</option>
+			<option value="thief">Thief</option>
+			<option value="black mage">Black Mage</option>
+			<option value="white mage">White Mage</option>
+		</optgroup>
+		<optgroup label="Water Crystal">
+			<option value="berserker">Berserker</option>
+			<option value="mystic knight">Mystic Knight</option>
+			<option value="time mage">Time Mage</option>
+			<option value="summoner">Summoner</option>
+			<option value="red mage">Red Mage</option>
+			<option value="mimic">Mimic</option>
+		</optgroup>
+		<optgroup label="Fire Crystal">
+			<option value="trainer">Trainer</option>
+			<option value="geomancer">Geomancer</option>
+			<option value="ninja">Ninja</option>
+			<option value="bard">Bard</option>
+			<option value="hunter">Hunter</option>
+		</optgroup>
+		<optgroup label="Earth Crystal">
+			<option value="samurai">Samurai</option>
+			<option value="lancer">Lancer</option>
+			<option value="dancer">Dancer</option>
+			<option value="chemist">Chemist</option>
+		</optgroup>
+	</select>
+	<br>
+	<label>Fire Job:</label>
+	<select name="fireJob" id="fireJob">
+		<option value=""> </option>
+		<optgroup label="Wind Crystal">
+			<option value="knight">Knight</option>
+			<option value="monk">Monk</option>
+			<option value="thief">Thief</option>
+			<option value="black mage">Black Mage</option>
+			<option value="white mage">White Mage</option>
+		</optgroup>
+		<optgroup label="Water Crystal">
+			<option value="berserker">Berserker</option>
+			<option value="mystic knight">Mystic Knight</option>
+			<option value="time mage">Time Mage</option>
+			<option value="summoner">Summoner</option>
+			<option value="red mage">Red Mage</option>
+			<option value="mimic">Mimic</option>
+		</optgroup>
+		<optgroup label="Fire Crystal">
+			<option value="trainer">Trainer</option>
+			<option value="geomancer">Geomancer</option>
+			<option value="ninja">Ninja</option>
+			<option value="bard">Bard</option>
+			<option value="hunter">Hunter</option>
+		</optgroup>
+		<optgroup label="Earth Crystal">
+			<option value="samurai">Samurai</option>
+			<option value="lancer">Lancer</option>
+			<option value="dancer">Dancer</option>
+			<option value="chemist">Chemist</option>
+		</optgroup>
+	</select>
+	<br>
+	<label>Earth Job:</label>
+	<select name="earthJob" id="earthJob">
+		<option value=""> </option>
+		<optgroup label="Wind Crystal">
+			<option value="knight">Knight</option>
+			<option value="monk">Monk</option>
+			<option value="thief">Thief</option>
+			<option value="black mage">Black Mage</option>
+			<option value="white mage">White Mage</option>
+		</optgroup>
+		<optgroup label="Water Crystal">
+			<option value="berserker">Berserker</option>
+			<option value="mystic knight">Mystic Knight</option>
+			<option value="time mage">Time Mage</option>
+			<option value="summoner">Summoner</option>
+			<option value="red mage">Red Mage</option>
+			<option value="mimic">Mimic</option>
+		</optgroup>
+		<optgroup label="Fire Crystal">
+			<option value="trainer">Trainer</option>
+			<option value="geomancer">Geomancer</option>
+			<option value="ninja">Ninja</option>
+			<option value="bard">Bard</option>
+			<option value="hunter">Hunter</option>
+		</optgroup>
+		<optgroup label="Earth Crystal">
+			<option value="samurai">Samurai</option>
+			<option value="lancer">Lancer</option>
+			<option value="dancer">Dancer</option>
+			<option value="chemist">Chemist</option>
+		</optgroup>
+	</select>
+	<br>
+	<button id="submitButton">Update</button>
+</body>
+
+<script>
+	const windJob = document.querySelector('#windJob');
+	const waterJob = document.querySelector('#waterJob');
+	const fireJob = document.querySelector('#fireJob');
+	const earthJob = document.querySelector('#earthJob');
+	
+	const submitButton = document.querySelector('#submitButton');
+	const windJobReplicant = nodecg.Replicant('windJob');
+	const waterJobReplicant = nodecg.Replicant('waterJob');
+	const fireJobReplicant = nodecg.Replicant('fireJob');
+	const earthJobReplicant = nodecg.Replicant('earthJob');
+	
+	//Allows Enter to be pressed to update
+	var enter = function(event) {
+	// Number 13 is the "Enter" key on the keyboard
+		if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+			event.preventDefault();
+    // Trigger the button element with a click
+			document.getElementById("submitButton").click();
+		}
+	}
+	
+	document.getElementById("windJob").addEventListener("keyup",enter, false);
+	document.getElementById("waterJob").addEventListener("keyup",enter, false);
+	document.getElementById("fireJob").addEventListener("keyup",enter, false);
+	document.getElementById("earthJob").addEventListener("keyup",enter, false);
+	
+	windJobReplicant.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		windJob.value = newValue;
+	});
+	
+	waterJobReplicant.on('change', (newValue, oldValue) => {
+		waterJob.value = newValue;
+	});
+
+	fireJobReplicant.on('change', (newValue2, oldValue2) => {
+		fireJob.value = newValue2;
+	});
+	
+	earthJobReplicant.on('change', (newValue2, oldValue2) => {
+		earthJob.value = newValue2;
+	});
+	
+	submitButton.onclick = () => {
+		// A Replicant can be modified by modifying its `value`.
+		windJobReplicant.value = windJob.value;
+		waterJobReplicant.value = waterJob.value;
+		fireJobReplicant.value = fireJob.value;
+		earthJobReplicant.value = earthJob.value;
+	};
+</script>
+</html>

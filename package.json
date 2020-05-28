@@ -1,0 +1,37 @@
+{
+  "name": "FourJobFiesta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell Nguyen <mitchellnguyen0@gmail.com>",
+  "license": "MIT",
+
+  "nodecg": {
+    "compatibleRange": ">=0.9",
+	"dashboardPanels": [
+      {
+        "name": "layout-edit",
+        "title": "Layout Editor",
+        "width": 2,
+        "file": "layout-edit.html",
+        "headerColor": "#FF00FF"
+      }
+    ],
+    "graphics": [
+	  {
+        "file": "horizontal.html",
+        "width": 795,
+        "height": 195
+      },
+	  {
+		"file": "vertical.html",
+		"width": 195,
+        "height": 795
+	  }
+    ]
+	
+  }
+}
