@@ -1,2 +1,2 @@
 # FourJobFiesta
-A tracker/overlay to use in Four Job Fiesta
+A tracker/overlay bundle for NodeCG to use in Four Job Fiesta
