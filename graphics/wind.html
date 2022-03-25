@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<script src="pic.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
+<head>
+	<style text="text/CSS">
+		@font-face {
+			src: url('fonts/pcsenior.ttf');
+			font-family: "pc";
+		}
+		
+		body {
+			width: 195px;
+			height: 195px;
+			background: transparent;
+			padding: 0px;
+			margin: 0px;
+			font-family: "pc";
+			color: white;
+			overflow: hidden;
+		}
+		/* Places the pictures of the jobs in the boxes */
+		#windIMG{
+			position: absolute;
+			top: 26px;
+			left: 63px;
+			opacity: 0;
+		}
+		/* Places the text in the boxes */
+		#windJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 135px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="img/Single.png"></img>
+	<img id="windIMG" width="68" height="100">
+	<span id="windJob"></span>
+</body>
+
+<script>
+	const windJobReplicant = nodecg.Replicant('windJob');
+	
+	var wind = $('#windJob');
+	
+	windJobReplicant.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		$('#windJob').css('opacity', 0);
+		windJob.innerText = `${newValue}`;
+		});
+</script>
+
+</html>

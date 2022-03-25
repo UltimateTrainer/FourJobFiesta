@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<script src="pic.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
+<head>
+	<style text="text/CSS">
+		@font-face {
+			src: url('fonts/pcsenior.ttf');
+			font-family: "pc";
+		}
+		
+		body {
+			width: 195px;
+			height: 195px;
+			background: transparent;
+			padding: 0px;
+			margin: 0px;
+			font-family: "pc";
+			color: white;
+			overflow: hidden;
+		}
+		/* Places the pictures of the jobs in the boxes */
+		
+		#earthIMG{
+			position: absolute;
+			top: 26px;
+			left: 63px;
+			opacity: 0;
+		}
+		/* Places the text in the boxes */
+		#earthJob{
+			position: absolute;
+			width: 120px;
+			height: 40px;
+			top: 135px;
+			left: 37px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="img/Single.png"></img>
+	<img id="earthIMG" width="68" height="100">
+	<span id="earthJob"></span>
+</body>
+
+<script>
+	const earthJobReplicant = nodecg.Replicant('earthJob');
+	
+	var earth = $('#earthJob');
+	
+	earthJobReplicant.on('change', (newValue, oldValue) => {
+		$('#earthJob').css('opacity', 0);
+		earthJob.innerText = `${newValue}`;
+		
+		});
+</script>
+
+</html>

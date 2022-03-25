@@ -30,6 +30,31 @@
 		"file": "vertical.html",
 		"width": 195,
         "height": 795
+	  },
+	  {
+		"file": "2x2.html",
+		"width": 395,
+        "height": 393
+	  },
+	  {
+		"file": "wind.html",
+		"width": 195,
+        "height": 195
+	  },
+	  {
+		"file": "water.html",
+		"width": 195,
+        "height": 195
+	  },
+	  {
+		"file": "fire.html",
+		"width": 195,
+        "height": 195
+	  },
+	  {
+		"file": "earth.html",
+		"width": 195,
+        "height": 195
 	  }
     ]
 	
