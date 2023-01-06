@@ -23,9 +23,10 @@
 	</style>
 </head>
 <body>
+	<label>Use Autotracker:</label><input type="checkbox" id="useJSON"><br>
 	<label>Wind Job:</label>
 	<select id="windJob">
-		<option value=""> </option>
+		<option value="freelancer">Freelancer</option>
 		<optgroup label="Wind Crystal">
 			<option value="knight">Knight</option>
 			<option value="monk">Monk</option>
@@ -42,7 +43,7 @@
 			<option value="mimic">Mimic</option>
 		</optgroup>
 		<optgroup label="Fire Crystal">
-			<option value="trainer">Trainer</option>
+			<option value="beast master">Beastmaster</option>
 			<option value="geomancer">Geomancer</option>
 			<option value="ninja">Ninja</option>
 			<option value="bard">Bard</option>
@@ -50,7 +51,7 @@
 		</optgroup>
 		<optgroup label="Earth Crystal">
 			<option value="samurai">Samurai</option>
-			<option value="lancer">Lancer</option>
+			<option value="dragoon">Dragoon</option>
 			<option value="dancer">Dancer</option>
 			<option value="chemist">Chemist</option>
 		</optgroup>
@@ -58,7 +59,7 @@
 	<br>
 	<label>Water Job:</label>
 	<select id="waterJob">
-		<option value=""> </option>
+		<option value="freelancer">Freelancer</option>
 		<optgroup label="Wind Crystal">
 			<option value="knight">Knight</option>
 			<option value="monk">Monk</option>
@@ -75,7 +76,7 @@
 			<option value="mimic">Mimic</option>
 		</optgroup>
 		<optgroup label="Fire Crystal">
-			<option value="trainer">Trainer</option>
+			<option value="beast master">Beastmaster</option>
 			<option value="geomancer">Geomancer</option>
 			<option value="ninja">Ninja</option>
 			<option value="bard">Bard</option>
@@ -83,7 +84,7 @@
 		</optgroup>
 		<optgroup label="Earth Crystal">
 			<option value="samurai">Samurai</option>
-			<option value="lancer">Lancer</option>
+			<option value="dragoon">Dragoon</option>
 			<option value="dancer">Dancer</option>
 			<option value="chemist">Chemist</option>
 		</optgroup>
@@ -91,7 +92,7 @@
 	<br>
 	<label>Fire Job:</label>
 	<select name="fireJob" id="fireJob">
-		<option value=""> </option>
+		<option value="freelancer">Freelancer</option>
 		<optgroup label="Wind Crystal">
 			<option value="knight">Knight</option>
 			<option value="monk">Monk</option>
@@ -108,7 +109,7 @@
 			<option value="mimic">Mimic</option>
 		</optgroup>
 		<optgroup label="Fire Crystal">
-			<option value="trainer">Trainer</option>
+			<option value="beast master">Beastmaster</option>
 			<option value="geomancer">Geomancer</option>
 			<option value="ninja">Ninja</option>
 			<option value="bard">Bard</option>
@@ -116,7 +117,7 @@
 		</optgroup>
 		<optgroup label="Earth Crystal">
 			<option value="samurai">Samurai</option>
-			<option value="lancer">Lancer</option>
+			<option value="dragoon">Dragoon</option>
 			<option value="dancer">Dancer</option>
 			<option value="chemist">Chemist</option>
 		</optgroup>
@@ -124,7 +125,7 @@
 	<br>
 	<label>Earth Job:</label>
 	<select name="earthJob" id="earthJob">
-		<option value=""> </option>
+		<option value="freelancer">Freelancer</option>
 		<optgroup label="Wind Crystal">
 			<option value="knight">Knight</option>
 			<option value="monk">Monk</option>
@@ -141,7 +142,7 @@
 			<option value="mimic">Mimic</option>
 		</optgroup>
 		<optgroup label="Fire Crystal">
-			<option value="trainer">Trainer</option>
+			<option value="beast master">Beastmaster</option>
 			<option value="geomancer">Geomancer</option>
 			<option value="ninja">Ninja</option>
 			<option value="bard">Bard</option>
@@ -149,7 +150,7 @@
 		</optgroup>
 		<optgroup label="Earth Crystal">
 			<option value="samurai">Samurai</option>
-			<option value="lancer">Lancer</option>
+			<option value="dragoon">Dragoon</option>
 			<option value="dancer">Dancer</option>
 			<option value="chemist">Chemist</option>
 		</optgroup>
@@ -163,6 +164,9 @@
 	const waterJob = document.querySelector('#waterJob');
 	const fireJob = document.querySelector('#fireJob');
 	const earthJob = document.querySelector('#earthJob');
+	
+	const useJSON = document.querySelector('#useJSON');
+	const JSONReplicant = nodecg.Replicant('useJSON');
 	
 	const submitButton = document.querySelector('#submitButton');
 	const windJobReplicant = nodecg.Replicant('windJob');
@@ -186,6 +190,7 @@
 	document.getElementById("fireJob").addEventListener("keyup",enter, false);
 	document.getElementById("earthJob").addEventListener("keyup",enter, false);
 	
+	
 	windJobReplicant.on('change', (newValue, oldValue) => {
 		// The value of the Replicant has changed somewhere in NodeCG,
 		// this could be another dashboard panel, a server initiated change,
@@ -205,12 +210,17 @@
 		earthJob.value = newValue2;
 	});
 	
+	JSONReplicant.on('change', (newValue, oldValue) => {
+		useJSON.checked=JSONReplicant.value.useJSON;
+	});
+	
 	submitButton.onclick = () => {
 		// A Replicant can be modified by modifying its `value`.
 		windJobReplicant.value = windJob.value;
 		waterJobReplicant.value = waterJob.value;
 		fireJobReplicant.value = fireJob.value;
 		earthJobReplicant.value = earthJob.value;
+		JSONReplicant.value.useJSON = useJSON.checked;
 	};
 </script>
 </html>
